@@ -39,10 +39,10 @@ for($j = 0; $j -lt $newList.Length; $j++){##generating reports, one for apps ins
     $path = Test-Path -Path $hname -PathType Leaf
     if ($path) {                                                                            ##creating a report adding each host report
         $partialReport = Get-Content $hname
-        Add-Content -Path "\\net-util\c$\report\installedApps.csv" $partialReport
+        Add-Content -Path "\\your_report_server\c$\report\installedApps.csv" $partialReport
     }
     else {                                                                                  ##creating a list of 
-        Add-Content -Path '\\net-util\c$\report\ErrorLog.txt' $newList[$j]
+        Add-Content -Path '\\your_report_server\c$\report\ErrorLog.txt' $newList[$j]
     }
 }
 Remove-ADUser -Identity TempServerAdmin
